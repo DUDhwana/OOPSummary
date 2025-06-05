@@ -1,47 +1,46 @@
-// ÀÌ¹ø °úÁ¦´Â Á¦Ãâ ÀÏÁ¤À» ¸ÂÃß±â À§ÇØ AIÀÇ µµ¿òÀ» ¹Ş¾Æ ÀÛ¼ºÇßÀ¸¸ç,
-// ÁÖ¿ä ·ÎÁ÷Àº ½º½º·Î ÀÌÇØÇÏ°í ¼öÁ¤ÇÏ¸ç ±¸ÇöÇß½À´Ï´Ù.
-f
+// ì´ë²ˆ ê³¼ì œëŠ” ì œì¶œ ì¼ì •ì„ ë§ì¶”ê¸° ìœ„í•´ AIì˜ ë„ì›€ì„ ë°›ì•„ ì‘ì„±í–ˆìœ¼ë©°,
+// ì£¼ìš” ë¡œì§ì€ ìŠ¤ìŠ¤ë¡œ ì´í•´í•˜ê³  ìˆ˜ì •í•˜ë©° êµ¬í˜„í–ˆìŠµë‹ˆë‹¤.
 
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
 using namespace std;
 
-// µ¿¹° class
+// ë™ë¬¼ class
 class Animal {
 public:
-    // ¼ø¼ö °¡»ó ÇÔ¼ö
+    // ìˆœìˆ˜ ê°€ìƒ í•¨ìˆ˜
     virtual void makeSound() = 0;
 
-    // ¼Ò¸êÀÚ
+    // ì†Œë©¸ì
     virtual ~Animal() {}
 };
 
-// °­¾ÆÁö class
+// ê°•ì•„ì§€ class
 class Dog : public Animal {
 public:
     void makeSound() override {
-        cout << "¸Û¸Û" << endl;
+        cout << "ë©ë©" << endl;
     }
 };
 
-// °í¾çÀÌ class
+// ê³ ì–‘ì´ class
 class Cat : public Animal {
 public:
     void makeSound() override {
-        cout << "¾ß¿Ë" << endl;
+        cout << "ì•¼ì˜¹" << endl;
     }
 };
 
-// ¼Ò class
+// ì†Œ class
 class Cow : public Animal {
 public:
     void makeSound() override {
-        cout << "À½¸Ó" << endl;
+        cout << "ìŒë¨¸" << endl;
     }
 };
 
-// random µ¿¹° »ı¼º ÇÔ¼ö
+// random ë™ë¬¼ ìƒì„± í•¨ìˆ˜
 Animal* createRandomAnimal() {
     int num = rand() % 3;
 
@@ -50,7 +49,7 @@ Animal* createRandomAnimal() {
     else return new Cow();
 }
 
-// µ¿¹°¿ø class
+// ë™ë¬¼ì› class
 class Zoo {
 private:
     Animal* animals[10];
@@ -87,7 +86,7 @@ int main() {
         myZoo.addAnimal(a);
     }
 
-    cout << "µ¿¹°µéÀÇ ¼Ò¸®¸¦ µé¾îº¸¼¼¿ä!" << endl;
+    cout << "ë™ë¬¼ë“¤ì˜ ì†Œë¦¬ë¥¼ ë“¤ì–´ë³´ì„¸ìš”!" << endl;
     myZoo.showAllSounds();
 
     return 0;
